@@ -1,0 +1,9 @@
+{
+	"name": "SelfLearningDev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b7f77fb4-416f-41f2-8150-84509f0ece12",
+		"tenantId": "21ac21f4-cffa-41b8-9562-74b028c0f424"
+	}
+}
