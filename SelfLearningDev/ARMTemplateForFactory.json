@@ -209,7 +209,7 @@
 			"properties": {
 				"description": "ScheduleJobTrigger",
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
