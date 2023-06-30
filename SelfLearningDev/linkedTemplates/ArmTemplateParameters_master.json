@@ -5,17 +5,11 @@
 		"factoryName": {
 			"value": "SelfLearningDev"
 		},
-		"AzureBlobStorageSourceLinked_connectionString": {
-			"value": ""
-		},
-		"Source_Linked_accountKey": {
-			"value": ""
-		},
 		"AzureBlobStorageSinkLinked_connectionString": {
 			"value": ""
 		},
-		"Source_Linked_properties_typeProperties_url": {
-			"value": "https://datalakestorage1986.dfs.core.windows.net/"
+		"AzureBlobStorageSourceLinked_connectionString": {
+			"value": ""
 		},
 		"containerUri": {
 			"value": ""

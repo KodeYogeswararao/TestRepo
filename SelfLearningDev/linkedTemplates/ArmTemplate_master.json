@@ -7,21 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "SelfLearningDev"
 		},
-		"AzureBlobStorageSourceLinked_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSourceLinked'"
-		},
-		"Source_Linked_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'Source_Linked'"
-		},
 		"AzureBlobStorageSinkLinked_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSinkLinked'"
 		},
-		"Source_Linked_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://datalakestorage1986.dfs.core.windows.net/"
+		"AzureBlobStorageSourceLinked_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSourceLinked'"
 		},
 		"containerUri": {
 			"type": "string",
@@ -50,17 +42,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureBlobStorageSourceLinked_connectionString": {
-						"value": "[parameters('AzureBlobStorageSourceLinked_connectionString')]"
-					},
-					"Source_Linked_accountKey": {
-						"value": "[parameters('Source_Linked_accountKey')]"
-					},
 					"AzureBlobStorageSinkLinked_connectionString": {
 						"value": "[parameters('AzureBlobStorageSinkLinked_connectionString')]"
 					},
-					"Source_Linked_properties_typeProperties_url": {
-						"value": "[parameters('Source_Linked_properties_typeProperties_url')]"
+					"AzureBlobStorageSourceLinked_connectionString": {
+						"value": "[parameters('AzureBlobStorageSourceLinked_connectionString')]"
 					}
 				}
 			},
