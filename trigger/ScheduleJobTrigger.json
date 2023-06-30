@@ -1,0 +1,25 @@
+{
+	"name": "ScheduleJobTrigger",
+	"properties": {
+		"description": "ScheduleJobTrigger",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Practice_1_1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2023-06-30T08:20:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
