@@ -1,0 +1,25 @@
+{
+	"name": "MasterTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Master_Pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2023-06-30T11:06:00Z",
+				"endTime": "2023-07-01T12:06:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
