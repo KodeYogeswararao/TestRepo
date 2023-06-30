@@ -36,7 +36,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> DelimitedText",
 				"DelimitedText sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"     validateSchema: true,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DelimitedOutput"
 			]
