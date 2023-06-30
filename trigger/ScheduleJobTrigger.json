@@ -4,12 +4,19 @@
 		"description": "ScheduleJobTrigger",
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [],
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Master_Pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Minute",
-				"interval": 1,
+				"interval": 5,
 				"startTime": "2023-06-30T08:20:00Z",
 				"timeZone": "UTC"
 			}
