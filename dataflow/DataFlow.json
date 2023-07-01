@@ -1,0 +1,45 @@
+{
+	"name": "DataFlow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedTextSource_1",
+						"type": "DatasetReference"
+					},
+					"name": "DelimitedText",
+					"description": "DelimitedText"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedTextSink_1",
+						"type": "DatasetReference"
+					},
+					"name": "DelimitedOutput",
+					"description": "DelimitedOutput"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          outlook as string,",
+				"          temperature as string,",
+				"          humidity as string,",
+				"          windy as string,",
+				"          play as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> DelimitedText",
+				"DelimitedText sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> DelimitedOutput"
+			]
+		}
+	}
+}
