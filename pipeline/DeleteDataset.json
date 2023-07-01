@@ -13,10 +13,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "DeleteDataset",
+
 						"type": "DatasetReference"
 					},
 					"logStorageSettings": {
