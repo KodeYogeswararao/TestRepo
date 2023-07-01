@@ -55,7 +55,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedTextSink",
+						"referenceName": "DelimitedTextSink_1",
 						"type": "DatasetReference"
 					}
 				]

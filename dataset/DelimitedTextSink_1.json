@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedTextSink",
+	"name": "DelimitedTextSink_1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorageSinkLinked",
