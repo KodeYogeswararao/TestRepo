@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "weather.csv",
-				"container": "output30062023"
+				"container": "output"
 			}
 		}
 	}
