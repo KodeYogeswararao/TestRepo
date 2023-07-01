@@ -1,23 +1,18 @@
 {
-	"name": "DelimitedTextSink",
+	"name": "DeleteDataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorageSinkLinked",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Weather",
+				"fileName": "weather.csv",
 				"container": "output30062023"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
-		},
-		"schema": []
+			}
+		}
 	}
 }

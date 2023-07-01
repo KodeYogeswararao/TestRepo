@@ -13,15 +13,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "FileDelete",
-						"value": "Delete file in input container and logged it into output container"
-					}
-				],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "DeleteSourceDataset",
+
 						"type": "DatasetReference"
 					},
 					"logStorageSettings": {
