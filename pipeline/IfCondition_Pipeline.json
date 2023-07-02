@@ -6,7 +6,13 @@
 				"name": "If Condition1",
 				"type": "IfCondition",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@bool(pipeline().parameters.copytoOutput1)",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
