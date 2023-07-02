@@ -19,9 +19,12 @@
 						"referenceName": "MetadataSource",
 						"type": "DatasetReference"
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems"
+					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"modifiedDatetimeStart": "2023-07-02T00:00:00.000Z",
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
