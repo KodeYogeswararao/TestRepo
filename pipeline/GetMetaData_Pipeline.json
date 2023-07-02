@@ -56,6 +56,13 @@
 						"referenceName": "DelimitedTextSource_1",
 						"type": "DatasetReference"
 					},
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorageSinkLinked",
+							"type": "LinkedServiceReference"
+						},
+						"path": "output30062023"
+					},
 					"enableLogging": true,
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
