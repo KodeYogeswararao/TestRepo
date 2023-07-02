@@ -1,6 +1,38 @@
 {
 	"name": "Filter_Activity_Pipeline",
 	"properties": {
+		"activities": [
+			{
+				"name": "Filter Files",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.ArrayOFValues",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@greater(item(),3)",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"ArrayOFValues": {
+				"type": "array",
+				"defaultValue": [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7
+				]
+			}
+		},
 		"annotations": []
 	}
 }
