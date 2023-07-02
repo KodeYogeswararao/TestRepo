@@ -1,0 +1,48 @@
+{
+	"name": "IfOutputDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSinkLinked",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"OutputFolder": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().OutputFolder",
+					"type": "Expression"
+				},
+				"container": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "Category",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "Error",
+				"type": "String"
+			}
+		]
+	}
+}
