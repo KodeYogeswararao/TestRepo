@@ -83,12 +83,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"OutputFolders": {
-				"type": "array",
-				"defaultValue": "[Output1,Output2,Output3]"
-			}
-		},
 		"annotations": []
 	}
 }
