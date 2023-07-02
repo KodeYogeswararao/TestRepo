@@ -1,0 +1,27 @@
+{
+	"name": "TestDatasetForeachFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSinkLinked",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"OutputFolders": {
+				"type": "array",
+				"defaultValue": "[Output4,Output5]"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().OutputFolders",
+					"type": "Expression"
+				},
+				"container": "output"
+			}
+		}
+	}
+}
