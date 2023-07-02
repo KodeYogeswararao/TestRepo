@@ -1,6 +1,29 @@
 {
 	"name": "Append Variable_Pipeline",
 	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "SalesIndia.txt"
+			}
+		},
+		"variables": {
+			"ListofFiles": {
+				"type": "Array",
+				"defaultValue": [
+					"SalesUS",
+					"SalesUK"
+				]
+			}
+		},
 		"annotations": []
 	}
 }
