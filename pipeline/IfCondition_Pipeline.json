@@ -5,6 +5,14 @@
 			"copytoOutput1": {
 				"type": "string",
 				"defaultValue": "true"
+			},
+			"Output1Filder": {
+				"type": "string",
+				"defaultValue": "output1"
+			},
+			"Output2Folder": {
+				"type": "string",
+				"defaultValue": "output2"
 			}
 		},
 		"annotations": []
