@@ -1,6 +1,17 @@
 {
 	"name": "SetVariable_Pipeline",
 	"properties": {
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "DailySales"
+			}
+		},
+		"variables": {
+			"FileType": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
