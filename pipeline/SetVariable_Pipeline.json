@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Set value for file",
+				"name": "Set value for filetype",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"policy": {
@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"variableName": "FileType",
 					"value": {
-						"value": "@replace(pipeline().parameters.FileName,'Sales','')",
+						"value": "@replace(pipeline().parameters.FileName,'Daily','Hourly')",
 						"type": "Expression"
 					}
 				}
