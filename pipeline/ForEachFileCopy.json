@@ -86,7 +86,7 @@
 		"parameters": {
 			"OutputFolders": {
 				"type": "array",
-				"defaultValue": "[output1,output2,output3]"
+				"defaultValue": "[Output1,Output2,Output3]"
 			}
 		},
 		"annotations": []
