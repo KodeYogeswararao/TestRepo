@@ -38,13 +38,7 @@
 						"referenceName": "Append Variable_Pipeline",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true,
-					"parameters": {
-						"FileName": {
-							"value": "@activity('Execute Pipeline1').output.pipelineReturnValue",
-							"type": "Expression"
-						}
-					}
+					"waitOnCompletion": true
 				}
 			}
 		],
