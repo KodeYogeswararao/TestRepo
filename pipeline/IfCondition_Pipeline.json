@@ -156,11 +156,11 @@
 			},
 			"Output1Filder": {
 				"type": "string",
-				"defaultValue": "output1"
+				"defaultValue": "output1111"
 			},
 			"Output2Folder": {
 				"type": "string",
-				"defaultValue": "output2"
+				"defaultValue": "output222"
 			}
 		},
 		"annotations": []
