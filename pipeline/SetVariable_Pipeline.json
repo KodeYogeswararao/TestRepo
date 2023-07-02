@@ -1,6 +1,21 @@
 {
 	"name": "SetVariable_Pipeline",
 	"properties": {
+		"activities": [
+			{
+				"name": "Set value for file",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			}
+		],
 		"parameters": {
 			"FileName": {
 				"type": "string",
