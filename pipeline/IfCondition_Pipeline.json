@@ -152,7 +152,7 @@
 		"parameters": {
 			"copytoOutput1": {
 				"type": "string",
-				"defaultValue": "true"
+				"defaultValue": "false"
 			},
 			"Output1Filder": {
 				"type": "string",
