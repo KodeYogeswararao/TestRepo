@@ -7,8 +7,8 @@
 		},
 		"parameters": {
 			"OutputFolders": {
-				"type": "array",
-				"defaultValue": "[Output4,Output5]"
+				"type": "string",
+				"defaultValue": "Ouptput4"
 			}
 		},
 		"annotations": [],
