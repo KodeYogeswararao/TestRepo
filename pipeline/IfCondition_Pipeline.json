@@ -156,7 +156,7 @@
 			},
 			"Output1Filder": {
 				"type": "string",
-				"defaultValue": "output1111"
+				"defaultValue": "output111"
 			},
 			"Output2Folder": {
 				"type": "string",
