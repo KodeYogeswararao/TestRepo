@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "weather.csv",
 				"container": "input"
 			},
 			"columnDelimiter": ",",
