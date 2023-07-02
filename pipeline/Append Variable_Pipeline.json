@@ -26,7 +26,8 @@
 			"ListofFiles": {
 				"type": "Array",
 				"defaultValue": [
-					"[SalesUS,SalesUK]"
+					"SalesUS",
+					"SalesUK"
 				]
 			}
 		},
