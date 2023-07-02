@@ -44,7 +44,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@equals(formatDateTime(utcnow(),'yyyy-MM-dd'),activity('Get Metadata1').formatDateTime(output.lastModified,'yyyy-MM-dd'))",
+						"value": "@equals(formatDateTime(utcNow(),'yyyy-MM-dd'),formatDateTime(activity('Get Metadata1').output.lastModifieds,'yyyy-MM-dd'))",
 						"type": "Expression"
 					}
 				}
