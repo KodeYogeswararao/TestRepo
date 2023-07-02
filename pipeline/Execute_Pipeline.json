@@ -36,6 +36,12 @@
 				}
 			}
 		],
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "SalesIndia.txt"
+			}
+		},
 		"annotations": []
 	}
 }
