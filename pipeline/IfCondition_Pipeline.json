@@ -1,0 +1,12 @@
+{
+	"name": "IfCondition_Pipeline",
+	"properties": {
+		"parameters": {
+			"copytoOutput1": {
+				"type": "string",
+				"defaultValue": "true"
+			}
+		},
+		"annotations": []
+	}
+}
