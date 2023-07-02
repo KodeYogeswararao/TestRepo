@@ -37,30 +37,12 @@
 										"type": "DelimitedTextReadSettings"
 									}
 								},
-								"sink": {
-									"type": "BinarySink",
-									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
-									}
-								},
 								"enableStaging": false
 							},
 							"inputs": [
 								{
 									"referenceName": "DelimitedTextSource_1",
 									"type": "DatasetReference"
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "OutputLocationDataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"OutputFolder": {
-											"value": "@pipeline().parameters.Output2Folder",
-											"type": "Expression"
-										}
-									}
 								}
 							]
 						}
@@ -91,12 +73,25 @@
 									}
 								},
 								"sink": {
-									"type": "BinarySink",
+									"type": "DelimitedTextSink",
 									"storeSettings": {
 										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
@@ -106,7 +101,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "OutputLocationDataset",
+									"referenceName": "IfOutputDataset",
 									"type": "DatasetReference",
 									"parameters": {
 										"OutputFolder": {
