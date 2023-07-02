@@ -10,7 +10,7 @@
 				"typeProperties": {
 					"variableName": "ListofFiles",
 					"value": {
-						"value": "@pipeline().parameters.FileName",
+						"value": "@replace(pipeline().parameters.FileName,'India','US')",
 						"type": "Expression"
 					}
 				}
