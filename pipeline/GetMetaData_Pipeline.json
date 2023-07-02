@@ -52,11 +52,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"FileNames": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
