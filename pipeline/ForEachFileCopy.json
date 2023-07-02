@@ -69,7 +69,13 @@
 							"outputs": [
 								{
 									"referenceName": "ForEachFileOutput",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"FolderName": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
@@ -79,8 +85,7 @@
 		],
 		"parameters": {
 			"OutputFolders": {
-				"type": "array",
-				"defaultValue": "[Output1,Output2,Output3]"
+				"type": "array"
 			}
 		},
 		"annotations": []
