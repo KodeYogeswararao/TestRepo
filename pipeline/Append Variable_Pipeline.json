@@ -3,10 +3,17 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Append variable1",
+				"name": "Append Listof Files Variables",
 				"type": "AppendVariable",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "ListofFiles",
+					"value": {
+						"value": "@pipeline().parameters.FileName",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
