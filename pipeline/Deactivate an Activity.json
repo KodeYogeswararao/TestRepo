@@ -21,8 +21,8 @@
 				}
 			},
 			{
-				"name": "Web1",
-				"type": "WebActivity",
+				"name": "Success Email",
+				"type": "Wait",
 				"dependsOn": [
 					{
 						"activity": "Copy data1",
@@ -31,18 +31,14 @@
 						]
 					}
 				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
 			},
 			{
-				"name": "Web2",
-				"type": "WebActivity",
+				"name": "Fail Email",
+				"type": "Wait",
 				"dependsOn": [
 					{
 						"activity": "Copy data1",
@@ -51,14 +47,10 @@
 						]
 					}
 				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
 			}
 		],
 		"annotations": []
