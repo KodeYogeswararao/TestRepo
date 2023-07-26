@@ -1,0 +1,16 @@
+{
+	"name": "onprem_sql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=172.16.8.76\\ss2017;initial catalog=\"RSPL_EP_DW_Staging  \";user id=rsplde",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3YjM4MTA4Yy0wZGFlLTRkNjgtOWVmNy1hNTY2MDVlNWE1NTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IRDemo",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
