@@ -1,0 +1,43 @@
+{
+	"name": "ApiData1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "outlook",
+				"type": "String"
+			},
+			{
+				"name": "temperature",
+				"type": "String"
+			},
+			{
+				"name": "humidity",
+				"type": "String"
+			},
+			{
+				"name": "windy",
+				"type": "String"
+			},
+			{
+				"name": "play",
+				"type": "String"
+			}
+		]
+	}
+}

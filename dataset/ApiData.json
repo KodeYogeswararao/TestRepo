@@ -1,0 +1,121 @@
+{
+	"name": "ApiData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onprem_sql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "user_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "emp_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "user_dept",
+				"type": "nvarchar"
+			},
+			{
+				"name": "project_index",
+				"type": "nvarchar"
+			},
+			{
+				"name": "assignment_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "date_key",
+				"type": "nvarchar"
+			},
+			{
+				"name": "available_hours_for_month",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "client_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "project",
+				"type": "nvarchar"
+			},
+			{
+				"name": "billable_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "non_billable_reserved_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "non_billable_onboarding_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "non_billable_internal_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "non_billable_shadow_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "non_billable_project_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "non_billable_opportunity_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "total_non_billable_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "opportunity_billable_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "leave_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "balance_hours",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "project_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "contract_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "__FileName",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "APIdata_Staging"
+		}
+	}
+}
