@@ -11,6 +11,12 @@
 		"AzureBlobStorageSourceLinked_connectionString": {
 			"value": ""
 		},
+		"onprem_sql_connectionString": {
+			"value": ""
+		},
+		"blob_connectionString": {
+			"value": ""
+		},
 		"containerUri": {
 			"value": ""
 		},

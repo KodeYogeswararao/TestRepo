@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSourceLinked'"
 		},
+		"onprem_sql_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'onprem_sql'"
+		},
+		"blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blob'"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,10 +55,36 @@
 					},
 					"AzureBlobStorageSourceLinked_connectionString": {
 						"value": "[parameters('AzureBlobStorageSourceLinked_connectionString')]"
+					},
+					"blob_connectionString": {
+						"value": "[parameters('blob_connectionString')]"
+					},
+					"onprem_sql_connectionString": {
+						"value": "[parameters('onprem_sql_connectionString')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "SelfLearningDev_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'SelfLearningDev_ArmTemplate_0')]"
+			]
 		}
 	]
 }

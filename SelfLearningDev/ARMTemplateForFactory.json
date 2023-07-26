@@ -14,6 +14,14 @@
 		"AzureBlobStorageSourceLinked_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSourceLinked'"
+		},
+		"onprem_sql_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'onprem_sql'"
+		},
+		"blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blob'"
 		}
 	},
 	"variables": {
@@ -1054,6 +1062,295 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedTextSource_1')]",
 				"[concat(variables('factoryId'), '/datasets/DelimitedTextSink_1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/IRDemo')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "IRDemo",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/onprem_sql')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('onprem_sql_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "IRDemo",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/IRDemo')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/blob')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('blob_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/demoonprem-sql')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlServerSource",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ApiData",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ApiData1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ApiData')]",
+				"[concat(variables('factoryId'), '/datasets/ApiData1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ApiData')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "onprem_sql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "user_name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "emp_code",
+						"type": "nvarchar"
+					},
+					{
+						"name": "user_dept",
+						"type": "nvarchar"
+					},
+					{
+						"name": "project_index",
+						"type": "nvarchar"
+					},
+					{
+						"name": "assignment_type",
+						"type": "nvarchar"
+					},
+					{
+						"name": "date_key",
+						"type": "nvarchar"
+					},
+					{
+						"name": "available_hours_for_month",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "client_name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "project",
+						"type": "nvarchar"
+					},
+					{
+						"name": "billable_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "non_billable_reserved_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "non_billable_onboarding_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "non_billable_internal_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "non_billable_shadow_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "non_billable_project_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "non_billable_opportunity_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "total_non_billable_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "opportunity_billable_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "leave_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "balance_hours",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "project_type",
+						"type": "nvarchar"
+					},
+					{
+						"name": "contract_number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "__FileName",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "APIdata_Staging"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/onprem_sql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ApiData1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "blob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "outlook",
+						"type": "String"
+					},
+					{
+						"name": "temperature",
+						"type": "String"
+					},
+					{
+						"name": "humidity",
+						"type": "String"
+					},
+					{
+						"name": "windy",
+						"type": "String"
+					},
+					{
+						"name": "play",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/blob')]"
 			]
 		}
 	]
